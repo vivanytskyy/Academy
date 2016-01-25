@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">
@@ -32,7 +32,7 @@
         	<table>
         		<tr>
         			<td width="25%" style="vertical-align: middle;">Date: </td>
-        			<td width="75%" style="vertical-align: middle;" colspan="3">
+        			<td width="75%" style="vertical-align: middle;">
         				<form:select path="schedule">
         					<%-- <form:option value="-" label="--Please Select"/> --%>
         					<form:options items="${schedulesList}" itemValue="id" itemLabel="timeStamp"/>
@@ -41,7 +41,7 @@
         		</tr>
         		<tr>
         			<td width="25%" style="vertical-align: middle;">Group: </td>
-        			<td width="75%" style="vertical-align: middle;" colspan="3">
+        			<td width="75%" style="vertical-align: middle;">
         				<%-- <form:input path="group.name" cssErrorClass="error"/>
         				<form:errors path="name" cssClass="error" />
         				<form:errors path="*" cssClass="error" /> --%>
@@ -53,7 +53,7 @@
         		</tr>
         		<tr>
         			<td width="25%" style="vertical-align: middle;">Lecturer: </td>
-        			<td width="75%" style="vertical-align: middle;" colspan="3">
+        			<td width="75%" style="vertical-align: middle;">
         				<form:select path="lecturer">
         					<%-- <form:option value="-" label="--Please Select"/> --%>
         					<form:options items="${lecturersList}" itemValue="id" itemLabel="name"/>
@@ -62,7 +62,7 @@
         		</tr>
         		<tr>
         			<td width="25%" style="vertical-align: middle;">Classroom: </td>
-        			<td width="75%" style="vertical-align: middle;" colspan="3">
+        			<td width="75%" style="vertical-align: middle;">
         				<form:select path="classroom">
         					<%-- <form:option value="-" label="--Please Select"/> --%>
         					<form:options items="${classroomsList}" itemValue="id" itemLabel="name"/>
@@ -71,7 +71,7 @@
         		</tr>
         		<tr>
         			<td width="25%" style="vertical-align: middle;">Subject: </td>
-        			<td width="75%" style="vertical-align: middle;" colspan="3">
+        			<td width="75%" style="vertical-align: middle;">
         				<form:select path="subject">
         					<%-- <form:option value="-" label="--Please Select"/> --%>
         					<form:options items="${subjectsList}" itemValue="id" itemLabel="name"/>
@@ -79,23 +79,19 @@
         			</td>        			
         		</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Lesson Start: </td>        			
-        			<td width="25%" style="vertical-align: middle;">
+        			<td width="25%" style="vertical-align: middle;">Lesson Interval: </td>        			
+        			<td width="75%" style="vertical-align: middle;">
         				<form:select path="lessonInterval">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
-        					<form:options items="${lessonIntervalsList}" itemValue="id" itemLabel="lessonStart"/>
+        					<c:forEach items="${lessonIntervalsList}" var="lessonInterval">
+        						<form:option value="${lessonInterval.id}">
+        							<c:out value="${lessonInterval.lessonStart} - ${lessonInterval.lessonFinish}"/>
+        						</form:option>
+        					</c:forEach>
         				</form:select>
-        			</td>
-        			<td width="25%" style="vertical-align: middle;">Lesson Finish: </td>        			
-        			<td width="25%" style="vertical-align: middle;">
-        				<%-- <form:select path="lessonInterval">
-        					<form:option value="-" label="--Please Select"/>
-        					<form:options items="${lessonIntervalsList}" itemValue="id" itemLabel="lessonFinish"/>
-        				</form:select> --%>
-        			</td>         			
+        			</td>       			
         		</tr>	        		
         		<tr>
-        			<td colspan="4">
+        			<td colspan="2">
         				<input type="submit" class="btn" value="Create"/>
         			</td>
         		</tr>

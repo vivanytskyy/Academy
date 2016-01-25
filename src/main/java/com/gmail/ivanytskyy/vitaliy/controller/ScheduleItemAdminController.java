@@ -12,8 +12,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomClassroomEditor;
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomGroupEditor;
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomLecturerEditor;
@@ -114,5 +116,46 @@ public class ScheduleItemAdminController {
 			scheduleItemService.create(scheduleItem);
 			return "redirect:create.html";
 		}
+	}
+	@RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
+	public String updateScheduleItem(@PathVariable("id") Long id, Model model){
+		ScheduleItem scheduleItem = scheduleItemService.findById(id);
+		if(scheduleItem == null){
+			return "redirect:/scheduleitems/list.html";
+		}else{
+			List<Schedule> schedulesList = scheduleService.findAll();
+			List<Group> groupsList = groupService.findAll();
+			List<Lecturer> lecturersList = lecturerService.findAll();
+			List<Classroom> classroomsList = classroomService.findAll();
+			List<Subject> subjectsList = subjectService.findAll();
+			List<LessonInterval> lessonIntervalsList = lessonIntervalService.findAll();
+			model.addAttribute("schedulesList", schedulesList);
+			model.addAttribute("groupsList", groupsList);
+			model.addAttribute("lecturersList", lecturersList);
+			model.addAttribute("classroomsList", classroomsList);
+			model.addAttribute("subjectsList", subjectsList);
+			model.addAttribute("lessonIntervalsList", lessonIntervalsList);
+			model.addAttribute("scheduleItem", scheduleItem);
+			return "scheduleItems/updateScheduleItem";
+		}
+	}
+	@RequestMapping(value="/{id}/edit", method=RequestMethod.POST)
+	public String updateScheduleItem(
+			@Valid @ModelAttribute("scheduleItem") ScheduleItem scheduleItem,
+			BindingResult result,
+			@PathVariable("id") Long id,
+			Model model){
+		System.out.println(scheduleItem.getId());
+		if(result.hasErrors()){
+			return "scheduleItems/updateScheduleItem";
+		}else{
+			scheduleItemService.create(scheduleItem);
+			return "redirect:/scheduleitems/{id}/edit";
+		}
+	}
+	@RequestMapping(value="/delete", method=RequestMethod.POST)
+	public String deleteScheduleItem(@RequestParam("id") Long id, Model model){
+		scheduleItemService.deleteById(id);
+		return "redirect:list.html";
 	}
 }

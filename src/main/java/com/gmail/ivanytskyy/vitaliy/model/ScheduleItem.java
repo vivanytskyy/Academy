@@ -21,23 +21,23 @@ public class ScheduleItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotNull
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "group_id", referencedColumnName = "id")
 	private Group group;
 	@NotNull
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "lecturer_id", referencedColumnName = "id")
 	private Lecturer lecturer;
 	@NotNull
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "classroom_id", referencedColumnName = "id")
 	private Classroom classroom;
 	@NotNull
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "subject_id", referencedColumnName = "id")
 	private Subject subject;
 	@NotNull
-	@ManyToOne(cascade = CascadeType.REMOVE)
+	@ManyToOne
 	@JoinColumn(name = "lesson_interval_id", referencedColumnName = "id")
 	private LessonInterval lessonInterval;
 	@NotNull

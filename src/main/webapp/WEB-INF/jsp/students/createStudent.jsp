@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">

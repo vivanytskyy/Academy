@@ -21,13 +21,15 @@ public class ScheduleItemRepositoryImpl implements ScheduleItemRepository {
 	}
 	@Override
 	public ScheduleItem findById(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(ScheduleItem.class, id);
 	}
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<ScheduleItem> findByScheduleId(long scheduleId) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.createQuery(
+				"SELECT si FROM ScheduleItem si WHERE si.schedule_id=:id")
+				.setParameter("id", scheduleId)
+				.getResultList();
 	}
 	@SuppressWarnings("unchecked")
 	@Override
@@ -36,7 +38,8 @@ public class ScheduleItemRepositoryImpl implements ScheduleItemRepository {
 	}
 	@Override
 	public void deleteById(long id) {
-		// TODO Auto-generated method stub
-		
+		ScheduleItem scheduleItem = findById(id);
+		System.out.println("id (from repository) = " + scheduleItem.getId());
+		entityManager.remove(scheduleItem);
 	}
 }

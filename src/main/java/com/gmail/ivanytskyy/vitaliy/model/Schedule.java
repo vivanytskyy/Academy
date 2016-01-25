@@ -30,7 +30,7 @@ public class Schedule {
 	@NotNull
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date timeStamp = new Date();
-	@OneToMany(mappedBy = "schedule", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "schedule", orphanRemoval=true,/*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
 	private List<ScheduleItem> scheduleItems = new ArrayList<ScheduleItem>();
 	public Long getId() {
 		return id;

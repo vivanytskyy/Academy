@@ -68,12 +68,12 @@ public class StudentAdminController {
 	}
 	@RequestMapping(value="/{id}/edit", method=RequestMethod.GET)
 	public String updateStudent(@PathVariable("id") Long id, Model model){
-		Student student = studentService.findById(id);
-		List<Group> groupsList = groupService.findAll();
-		model.addAttribute("groupsList", groupsList);
+		Student student = studentService.findById(id);		
 		if(student == null){
 			return "redirect:/students/list.html";
 		}else{
+			List<Group> groupsList = groupService.findAll();
+			model.addAttribute("groupsList", groupsList);
 			model.addAttribute("student", student);
 			return "students/updateStudent";
 		}
@@ -89,8 +89,7 @@ public class StudentAdminController {
 		}else if(!groupService.isExistsWithName(student.getGroup().getName())){
 			result.reject("notExists", "group with this name doesn't exists");
 			return "students/createStudent";
-		}
-		else{
+		}else{
 			studentService.create(student);
 			return "redirect:/students/{id}/edit";
 		}		

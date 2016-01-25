@@ -87,6 +87,16 @@ public class ScheduleAdminController {
 			return "redirect:/schedules/{id}/edit.html";
 		}
 	}
+	@RequestMapping(value="/{id}/scheduleitemslist", method=RequestMethod.GET)
+	public String showScheduleItemsList(@PathVariable("id") Long id, Model model){
+		Schedule schedule = scheduleService.findById(id);			
+		if(schedule == null){
+			return "redirect:/schedules/list.html";
+		}else{
+			model.addAttribute("schedule", schedule);
+			return "schedules/scheduleContent";
+		}
+	}
 	@RequestMapping(value="/{id}/delete", method=RequestMethod.GET)
 	public String deleteSchedule(@PathVariable("id") Long id, Model model){
 		Schedule schedule = scheduleService.findById(id);

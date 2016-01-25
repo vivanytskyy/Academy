@@ -1,9 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.model;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
-
-import javax.persistence.CascadeType;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -12,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 /*
  * Task #4/2016/01/09 (web project #4)
@@ -31,7 +27,7 @@ public class Schedule {
 	@DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date timeStamp = new Date();
 	@OneToMany(mappedBy = "schedule", orphanRemoval=true,/*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
-	private List<ScheduleItem> scheduleItems = new ArrayList<ScheduleItem>();
+	private Set<ScheduleItem> scheduleItems = new TreeSet<ScheduleItem>();
 	public Long getId() {
 		return id;
 	}
@@ -44,10 +40,10 @@ public class Schedule {
 	public void setTimeStamp(Date timeStamp) {
 		this.timeStamp = timeStamp;
 	}
-	public List<ScheduleItem> getScheduleItems() {
+	public Set<ScheduleItem> getScheduleItems() {
 		return scheduleItems;
 	}
-	public void setScheduleItems(List<ScheduleItem> scheduleItems) {
+	public void setScheduleItems(Set<ScheduleItem> scheduleItems) {
 		this.scheduleItems = scheduleItems;
 	}
 }

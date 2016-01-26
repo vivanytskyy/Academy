@@ -20,5 +20,6 @@ public class Academy {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}	
+	}
+	
 }

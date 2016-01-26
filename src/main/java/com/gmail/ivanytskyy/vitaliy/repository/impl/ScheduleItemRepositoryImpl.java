@@ -3,6 +3,10 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
+import com.gmail.ivanytskyy.vitaliy.model.Classroom;
+import com.gmail.ivanytskyy.vitaliy.model.Group;
+import com.gmail.ivanytskyy.vitaliy.model.Lecturer;
+import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 import com.gmail.ivanytskyy.vitaliy.model.ScheduleItem;
 import com.gmail.ivanytskyy.vitaliy.repository.ScheduleItemRepository;
 @Repository("scheduleItemRepository")
@@ -42,4 +46,33 @@ public class ScheduleItemRepositoryImpl implements ScheduleItemRepository {
 		System.out.println("id (from repository) = " + scheduleItem.getId());
 		entityManager.remove(scheduleItem);
 	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ScheduleItem> findScheduleByClassroom(Schedule schedule,
+			Classroom classroom) {
+		return entityManager.createQuery(
+				"SELECT si FROM ScheduleItem si WHERE si.schedule.id=:scheduleId AND si.classroom.id=:classroomId")
+				.setParameter("scheduleId", schedule.getId())
+				.setParameter("classroomId", classroom.getId())
+				.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ScheduleItem> findScheduleByLecturer(Schedule schedule,
+			Lecturer lecturer) {
+		return entityManager.createQuery(
+				"SELECT si FROM ScheduleItem si WHERE si.schedule.id=:scheduleId AND si.lecturer.id=:lecturerId")
+				.setParameter("scheduleId", schedule.getId())
+				.setParameter("lecturerId", lecturer.getId())
+				.getResultList();
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<ScheduleItem> findScheduleByGroup(Schedule schedule, Group group) {
+		return entityManager.createQuery(
+				"SELECT si FROM ScheduleItem si WHERE si.schedule.id=:scheduleId AND si.group.id=:groupId")
+				.setParameter("scheduleId", schedule.getId())
+				.setParameter("groupId", group.getId())
+				.getResultList();
+	}	
 }

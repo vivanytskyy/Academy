@@ -35,7 +35,7 @@ public class LecturerAdminController {
 		if(result.hasErrors()){
 			return "lecturers/createLecturer";
 		}else if(lecturerService.isExistsWithName(lecturer.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "lecturers/createLecturer";
 		}else{
 			lecturerService.create(lecturer);
@@ -61,7 +61,7 @@ public class LecturerAdminController {
 		if(result.hasErrors()){
 			return "lecturers/updateLecturer";
 		}else if(lecturerService.isExistsWithName(lecturer.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "lecturers/updateLecturer";
 		}else{
 			lecturerService.create(lecturer);

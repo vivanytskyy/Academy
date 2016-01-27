@@ -54,7 +54,7 @@ public class ScheduleAdminController {
 		if(result.hasErrors()){
 			return "schedules/createSchedule";
 		}else if(scheduleService.isExistsWithDate(schedule.getTimeStamp())){
-			result.reject("notUnique", "Value must be unique!");
+			result.reject("notUniqueScheduleDate");
 			return "schedules/createSchedule";
 		}else {
 			scheduleService.create(schedule);
@@ -80,7 +80,7 @@ public class ScheduleAdminController {
 		if(result.hasErrors()){
 			return "schedules/createSchedule";
 		}else if(scheduleService.isExistsWithDate(schedule.getTimeStamp())){
-			result.reject("notUnique", "Value must be unique!");
+			result.reject("notUniqueScheduleDate");
 			return "schedules/createSchedule";
 		}else {
 			scheduleService.create(schedule);

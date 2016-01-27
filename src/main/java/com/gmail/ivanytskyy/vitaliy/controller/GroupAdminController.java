@@ -37,7 +37,7 @@ public class GroupAdminController {
 		if(result.hasErrors()){
 			return "groups/createGroup";
 		}else if(groupService.isExistsWithName(group.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "groups/createGroup";
 		}else{
 			groupService.create(group);
@@ -63,7 +63,7 @@ public class GroupAdminController {
 		if(result.hasErrors()){
 			return "groups/updateGroup";
 		}else if(groupService.isExistsWithName(group.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "groups/updateGroup";
 		}
 		// control presence students into current group

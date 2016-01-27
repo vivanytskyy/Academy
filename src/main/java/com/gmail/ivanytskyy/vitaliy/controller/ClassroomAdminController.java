@@ -38,7 +38,7 @@ public class ClassroomAdminController {
 		if(result.hasErrors()){
 			return "classrooms/createClassroom";
 		}else if(classroomService.isExistsWithName(classroom.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUnique");
 			return "classrooms/createClassroom";
 		}else{
 			classroomService.create(classroom);
@@ -64,7 +64,7 @@ public class ClassroomAdminController {
 		if(result.hasErrors()){
 			return "classrooms/updateClassroom";
 		}else if(classroomService.isExistsWithName(classroom.getName())){			
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "classrooms/updateClassroom";
 		}else{
 			classroomService.create(classroom);

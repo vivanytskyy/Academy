@@ -38,7 +38,7 @@ public class SubjectAdminController {
 		if(result.hasErrors()){
 			return "subjects/createSubject";
 		}else if(subjectService.isExistsWithName(subject.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "subjects/createSubject";
 		}else{
 			subjectService.create(subject);
@@ -64,7 +64,7 @@ public class SubjectAdminController {
 		if(result.hasErrors()){
 			return "subjects/updateSubject";
 		}else if(subjectService.isExistsWithName(subject.getName())){
-			result.reject("notUnique", "value must be unique");
+			result.reject("notUniqueName");
 			return "subjects/updateSubject";
 		}else{
 			subjectService.create(subject);

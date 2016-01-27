@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -26,8 +27,10 @@
 
     <div class="container">
       <div class="starter-template">
-        <h1>Schedule by Classroom</h1>
-        <p class="lead">${greetingUser}</p>
+        <h1>Schedule by Classroom</h1>        
+        <p class="lead">
+        	<spring:message code="obtain.schedule.by.classroom.greeting"/>
+        </p>
         <%-- <form>
 		  <div class="form-group">
 		    <label>Name</label> 

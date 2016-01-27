@@ -25,7 +25,6 @@ public class Group {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotEmpty
-	@Size
 	private String name;
 	@OneToMany(mappedBy = "group", orphanRemoval=true, /*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
 	private Set<Student> students = new TreeSet<Student>();

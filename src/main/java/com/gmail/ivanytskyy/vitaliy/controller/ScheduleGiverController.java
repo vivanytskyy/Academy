@@ -62,9 +62,6 @@ public class ScheduleGiverController {
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Classroom> classroomsList = classroomService.findAll();
 		List<Schedule> schedulesList = scheduleService.findAll();
-		model.addAttribute(
-				"greetingUser",
-				"Select the initial parameters for obtaining the schedule by classroom name");
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("classroomsList", classroomsList);
 		model.addAttribute("schedulesList", schedulesList);
@@ -92,9 +89,6 @@ public class ScheduleGiverController {
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Lecturer> lecturersList = lecturerService.findAll();
 		List<Schedule> schedulesList = scheduleService.findAll();
-		model.addAttribute(
-				"greetingUser",
-				"Select the initial parameters for obtaining the schedule by lecturer name");
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("lecturersList", lecturersList);
 		model.addAttribute("schedulesList", schedulesList);
@@ -122,9 +116,6 @@ public class ScheduleGiverController {
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Group> groupsList = groupService.findAll();
 		List<Schedule> schedulesList = scheduleService.findAll();
-		model.addAttribute(
-				"greetingUser",
-				"Select the initial parameters for obtaining the schedule by group name");
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("groupsList", groupsList);
 		model.addAttribute("schedulesList", schedulesList);

@@ -2,7 +2,6 @@ package com.gmail.ivanytskyy.vitaliy.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomClassroomEditor;
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomGroupEditor;
 import com.gmail.ivanytskyy.vitaliy.controller.editor.CustomLecturerEditor;
@@ -30,7 +28,7 @@ import com.gmail.ivanytskyy.vitaliy.service.LecturerService;
 import com.gmail.ivanytskyy.vitaliy.service.ScheduleService;
 @Controller
 @RequestMapping("/getSchedule")
-public class ObtainingScheduleController {
+public class ScheduleGiverController {
 	@Autowired
 	private AcademyService academyService;
 	@Autowired

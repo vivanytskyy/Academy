@@ -12,6 +12,7 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
+	<div id="wrap">
 		<div class="container">
 			<div class="starter-template">
 				<h1>Edit the lecturer</h1>
@@ -36,6 +37,8 @@
 				</form:form>
 			</div>
 		</div><!-- /.container -->
+		<div id="push"></div>
+	</div>
 	<jsp:include page="../fragments/footer.jsp"/>
     <!-- Bootstrap core JavaScript
     ================================================== -->

@@ -12,46 +12,49 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-    <div class="container">
-      <div class="starter-template">
-        <h1>Schedule by Lecturer</h1>        
-        <p class="lead">
-        	<spring:message code="obtain.schedule.by.lecturer.greeting"/>
-        </p>
-		<form:form commandName="scheduleItem">
-			<form:errors path="*" cssClass="errorblock" element="div"/>
-			<table>
-				<tr>
-					<td width="30%" style="vertical-align: middle;">Lecturer name: </td>
-					<td width="30%" style="vertical-align: middle;">
-        				<form:select path="lecturer" cssErrorClass="error">
-        					<form:options items="${lecturersList}" itemValue="id" itemLabel="name"/>
-        				</form:select>
-        			</td>
-        			<td width="40%" style="vertical-align: middle;">
-        				<form:errors path="lecturer" cssClass="error"/>
-        			</td>  
-				</tr>
-				<tr>
-        			<td width="30%" style="vertical-align: middle;">Date: </td>
-        			<td width="30%" style="vertical-align: middle;">
-        				<form:select path="schedule" cssErrorClass="error">
-        					<form:options items="${schedulesList}" itemValue="id" itemLabel="timeStamp"/>
-        				</form:select>
-        			</td>
-        			<td width="40%" style="vertical-align: middle;">
-        				<form:errors path="schedule" cssClass="error"/>
-        			</td>        			
-        		</tr>
-        		<tr>
-        			<td colspan="3">
-        				<input type="submit" class="btn" value="Find"/>
-        			</td>
-        		</tr>
-			</table>
-		</form:form>
-      </div>                     
-    </div><!-- /.container -->    
+	<div id="wrap">
+	    <div class="container">
+	      <div class="starter-template">
+	        <h1>Schedule by Lecturer</h1>        
+	        <p class="lead">
+	        	<spring:message code="obtain.schedule.by.lecturer.greeting"/>
+	        </p>
+			<form:form commandName="scheduleItem">
+				<form:errors path="*" cssClass="errorblock" element="div"/>
+				<table>
+					<tr>
+						<td width="30%" style="vertical-align: middle;">Lecturer name: </td>
+						<td width="30%" style="vertical-align: middle;">
+	        				<form:select path="lecturer" cssErrorClass="error">
+	        					<form:options items="${lecturersList}" itemValue="id" itemLabel="name"/>
+	        				</form:select>
+	        			</td>
+	        			<td width="40%" style="vertical-align: middle;">
+	        				<form:errors path="lecturer" cssClass="error"/>
+	        			</td>  
+					</tr>
+					<tr>
+	        			<td width="30%" style="vertical-align: middle;">Date: </td>
+	        			<td width="30%" style="vertical-align: middle;">
+	        				<form:select path="schedule" cssErrorClass="error">
+	        					<form:options items="${schedulesList}" itemValue="id" itemLabel="timeStamp"/>
+	        				</form:select>
+	        			</td>
+	        			<td width="40%" style="vertical-align: middle;">
+	        				<form:errors path="schedule" cssClass="error"/>
+	        			</td>        			
+	        		</tr>
+	        		<tr>
+	        			<td colspan="3">
+	        				<input type="submit" class="btn" value="Find"/>
+	        			</td>
+	        		</tr>
+				</table>
+			</form:form>
+	      </div>                     
+	    </div><!-- /.container -->
+	    <div id="push"></div>
+    </div>
     <jsp:include page="../fragments/footer.jsp"/>    
     <!-- Bootstrap core JavaScript
     ================================================== -->

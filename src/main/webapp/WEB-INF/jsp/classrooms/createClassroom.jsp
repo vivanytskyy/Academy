@@ -12,30 +12,33 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-    <div class="container">
-      <div class="starter-template">
-        <h1>Create new classroom:</h1>      
-        <form:form commandName="classroom">
-        	<form:errors path="*" cssClass="errorblock" element="div" />
-        	<table>
-        		<tr>
-        			<td width="20%" style="vertical-align: middle;">Name: </td>
-        			<td width="30%" style="vertical-align: middle;">
-        				<form:input path="name" cssErrorClass="error"/>
-        			</td>
-        			<td width="50%" style="vertical-align: middle;">
-        				<form:errors path="*" cssClass="error" />
-        			</td>         			
-        		</tr>	        		
-        		<tr>
-        			<td colspan="3">
-        				<input type="submit" class="btn" value="Create"/>
-        			</td>
-        		</tr>
-        	</table>
-		</form:form>		
-      </div>                     
-    </div><!-- /.container -->
+	<div id="wrap">
+	    <div class="container">
+	      <div class="starter-template">
+	        <h1>Create new classroom:</h1>      
+	        <form:form commandName="classroom">
+	        	<form:errors path="*" cssClass="errorblock" element="div" />
+	        	<table>
+	        		<tr>
+	        			<td width="20%" style="vertical-align: middle;">Name: </td>
+	        			<td width="30%" style="vertical-align: middle;">
+	        				<form:input path="name" cssErrorClass="error"/>
+	        			</td>
+	        			<td width="50%" style="vertical-align: middle;">
+	        				<form:errors path="*" cssClass="error" />
+	        			</td>         			
+	        		</tr>	        		
+	        		<tr>
+	        			<td colspan="3">
+	        				<input type="submit" class="btn" value="Create"/>
+	        			</td>
+	        		</tr>
+	        	</table>
+			</form:form>		
+	      </div>                     
+	    </div><!-- /.container -->
+		<div id="push"></div>
+    </div>
     <jsp:include page="../fragments/footer.jsp"/>
     <!-- Bootstrap core JavaScript
     ================================================== -->

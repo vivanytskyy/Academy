@@ -12,40 +12,43 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-	<div class="container">
-		<div class="starter-template">
-			<h1>Schedule result</h1>
-			<p class="lead">
-				Schedule on 
-					<em><fmt:formatDate value="${schedule.timeStamp}" pattern="dd-MM-yyyy"/></em> 
-				for <em>"${parameter.name}"</em> 
-			</p>
-			<table>
-				<tr>
-					<!-- <th width="5%" style="vertical-align: middle;">ID</th>
-					<th width="10%" style="vertical-align: middle;">Date</th>					
-					<th width="10%" style="vertical-align: middle;">Classroom</th> -->
-					<th width="10%" style="vertical-align: middle;">Lesson Interval</th>
-					<th width="10%" style="vertical-align: middle;">Classroom</th>					
-					<th width="10%" style="vertical-align: middle;">Group</th>										
-					<th width="10%" style="vertical-align: middle;">Lecturer</th>
-					<th width="10%" style="vertical-align: middle;">Subject</th>
-				</tr>
-				<c:forEach items="${resultScheduleItems}" var="scheduleItem">
+	<div id="wrap">
+		<div class="container">
+			<div class="starter-template">
+				<h1>Schedule result</h1>
+				<p class="lead">
+					Schedule on 
+						<em><fmt:formatDate value="${schedule.timeStamp}" pattern="dd-MM-yyyy"/></em> 
+					for <em>"${parameter.name}"</em> 
+				</p>
+				<table>
 					<tr>
-						<%-- <td>${scheduleItem.id}</td>
-						<td><fmt:formatDate value="${scheduleItem.schedule.timeStamp}" pattern="dd-MM-yyyy"/></td>						
-						<td>${scheduleItem.classroom.name}</td> --%>						
-						<td>${scheduleItem.lessonInterval.lessonStart} - ${scheduleItem.lessonInterval.lessonFinish}</td>
-						<td>${scheduleItem.classroom.name}</td>
-						<td>${scheduleItem.group.name}</td>
-						<td>${scheduleItem.lecturer.name}</td>
-						<td>${scheduleItem.subject.name}</td>						
+						<!-- <th width="5%" style="vertical-align: middle;">ID</th>
+						<th width="10%" style="vertical-align: middle;">Date</th>					
+						<th width="10%" style="vertical-align: middle;">Classroom</th> -->
+						<th width="10%" style="vertical-align: middle;">Lesson Interval</th>
+						<th width="10%" style="vertical-align: middle;">Classroom</th>					
+						<th width="10%" style="vertical-align: middle;">Group</th>										
+						<th width="10%" style="vertical-align: middle;">Lecturer</th>
+						<th width="10%" style="vertical-align: middle;">Subject</th>
 					</tr>
-				</c:forEach>
-			</table>
-		</div>
-	</div><!-- /.container -->
+					<c:forEach items="${resultScheduleItems}" var="scheduleItem">
+						<tr>
+							<%-- <td>${scheduleItem.id}</td>
+							<td><fmt:formatDate value="${scheduleItem.schedule.timeStamp}" pattern="dd-MM-yyyy"/></td>						
+							<td>${scheduleItem.classroom.name}</td> --%>						
+							<td>${scheduleItem.lessonInterval.lessonStart} - ${scheduleItem.lessonInterval.lessonFinish}</td>
+							<td>${scheduleItem.classroom.name}</td>
+							<td>${scheduleItem.group.name}</td>
+							<td>${scheduleItem.lecturer.name}</td>
+							<td>${scheduleItem.subject.name}</td>						
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div><!-- /.container -->
+		<div id="push"></div>
+	</div>
 	<jsp:include page="../fragments/footer.jsp"/>
 	<!-- Bootstrap core JavaScript
     ================================================== -->

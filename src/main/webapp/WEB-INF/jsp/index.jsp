@@ -10,15 +10,18 @@
 	<title>Academy</title>
 </head>
 <body>
-	<jsp:include page="fragments/bodyHeader.jsp"/>	
-    <div class="container">
-      <div class="starter-template">
-        <h1>Academy</h1>
-        <p class="lead">
-        	<spring:message code="academy.greeting"/>
-        </p>
-      </div>                     
-    </div><!-- /.container -->    
+	<jsp:include page="fragments/bodyHeader.jsp"/>
+	<div id="wrap">	
+	    <div class="container">
+	      <div class="starter-template">
+	        <h1>Academy</h1>
+	        <p class="lead">
+	        	<spring:message code="academy.greeting"/>
+	        </p>
+	      </div>                     
+	    </div><!-- /.container -->
+	    <div id="push"></div>
+    </div>    
     <jsp:include page="fragments/footer.jsp"/>
     <!-- Bootstrap core JavaScript
     ================================================== -->    

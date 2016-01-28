@@ -11,45 +11,48 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-	<div class="container">
-    	<div class="starter-template">
-    		<h1>Lesson intervals list</h1>
-    		<table>
-    			<tr>
-    				<th width="20%" style="vertical-align: middle;">Start</th>
-    				<th width="20%" style="vertical-align: middle;">Finish</th>
-    				<th width="30%" style="vertical-align: middle;" colspan="2">Available actions</th>
-    				<th width="30%" style="vertical-align: middle;">
-    					<a href="create.html">Create new lesson interval</a>
-    				</th>
-    			</tr>
-    			<c:forEach items="${lessonIntervals}" var="interval">
-    				<tr>
-    					<td>${interval.lessonStart}</td>
-    					<td>${interval.lessonFinish}</td>
-    					<td>
-    						<form action="<c:url value='/lessonintervals/${interval.id}/edit'/>" method="GET">
-    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Edit">
-									<button type="submit" class="btn btn-default btn-md">
-										<span>Edit</span>
-									</button>
-								</a>
-    						</form>    					
-    					</td>
-    					<td>
-    						<form action="delete.html" method="POST">
-    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
-									<button type="submit" name="id" value="${interval.id}" class="btn btn-default btn-md">
-										<span>Delete</span>
-									</button>
-								</a>
-    						</form>    					
-    					</td>
-    				</tr>
-    			</c:forEach>
-    		</table>
-    	</div>
-    </div><!-- /.container -->
+	<div id="wrap">
+		<div class="container">
+	    	<div class="starter-template">
+	    		<h1>Lesson intervals list</h1>
+	    		<table>
+	    			<tr>
+	    				<th width="20%" style="vertical-align: middle;">Start</th>
+	    				<th width="20%" style="vertical-align: middle;">Finish</th>
+	    				<th width="30%" style="vertical-align: middle;" colspan="2">Available actions</th>
+	    				<th width="30%" style="vertical-align: middle;">
+	    					<a href="create.html">Create new lesson interval</a>
+	    				</th>
+	    			</tr>
+	    			<c:forEach items="${lessonIntervals}" var="interval">
+	    				<tr>
+	    					<td>${interval.lessonStart}</td>
+	    					<td>${interval.lessonFinish}</td>
+	    					<td>
+	    						<form action="<c:url value='/lessonintervals/${interval.id}/edit'/>" method="GET">
+	    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Edit">
+										<button type="submit" class="btn btn-default btn-md">
+											<span>Edit</span>
+										</button>
+									</a>
+	    						</form>    					
+	    					</td>
+	    					<td>
+	    						<form action="delete.html" method="POST">
+	    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
+										<button type="submit" name="id" value="${interval.id}" class="btn btn-default btn-md">
+											<span>Delete</span>
+										</button>
+									</a>
+	    						</form>    					
+	    					</td>
+	    				</tr>
+	    			</c:forEach>
+	    		</table>
+	    	</div>
+	    </div><!-- /.container -->
+	    <div id="push"></div>
+    </div>
 	<jsp:include page="../fragments/footer.jsp"/>
 	<!-- Bootstrap core JavaScript
     ================================================== -->

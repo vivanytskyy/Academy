@@ -11,32 +11,35 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-	<div class="container">
-		<div class="starter-template">
-			<h1>Group content</h1>
-			<p class="lead">Group name: ${group.name}</p>
-			<table>
-				<tr>
-					<th width="30%" style="vertical-align: middle;">Student name</th>
-					<th width="40%" style="vertical-align: middle;">Available actions</th>
-				</tr>
-				<c:forEach items="${group.students}" var="student">
+	<div id="wrap">
+		<div class="container">
+			<div class="starter-template">
+				<h1>Group content</h1>
+				<p class="lead">Group name: ${group.name}</p>
+				<table>
 					<tr>
-						<td>${student.name}</td>
-						<td>
-    						<form action="<c:url value='/students/delete.html'/>" method="POST">
-    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
-									<button type="submit" name="id" value="${student.id}" class="btn btn-default btn-md">
-										<span>Delete</span>
-									</button>
-								</a>
-    						</form>   
-						</td>
+						<th width="30%" style="vertical-align: middle;">Student name</th>
+						<th width="40%" style="vertical-align: middle;">Available actions</th>
 					</tr>
-				</c:forEach>
-			</table>
-		</div>
-	</div><!-- /.container -->
+					<c:forEach items="${group.students}" var="student">
+						<tr>
+							<td>${student.name}</td>
+							<td>
+	    						<form action="<c:url value='/students/delete.html'/>" method="POST">
+	    							<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
+										<button type="submit" name="id" value="${student.id}" class="btn btn-default btn-md">
+											<span>Delete</span>
+										</button>
+									</a>
+	    						</form>   
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div><!-- /.container -->
+		<div id="push"></div>
+	</div>
 	<jsp:include page="../fragments/footer.jsp"/>
 	<!-- Bootstrap core JavaScript
     ================================================== -->

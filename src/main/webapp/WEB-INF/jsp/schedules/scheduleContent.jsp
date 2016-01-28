@@ -12,44 +12,47 @@
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-	<div class="container">
-		<div class="starter-template">
-			<h1>Schedule content</h1>
-			<p class="lead">Schedule date: 
-				<fmt:formatDate value="${schedule.timeStamp}" pattern="dd-MM-yyyy"/>
-			</p>
-			<table>
-				<tr>
-					<th width="10%" style="vertical-align: middle;">ID</th>
-					<th width="10%" style="vertical-align: middle;">Group</th>										
-					<th width="10%" style="vertical-align: middle;">Lecturer</th>
-					<th width="10%" style="vertical-align: middle;">Classroom</th>
-					<th width="10%" style="vertical-align: middle;">Subject</th>
-					<th width="10%" style="vertical-align: middle;">Lesson Interval</th>
-					<th width="20%" style="vertical-align: middle;">Available actions</th>
-				</tr>
-				<c:forEach items="${schedule.scheduleItems}" var="scheduleItem">
+	<div id="wrap">
+		<div class="container">
+			<div class="starter-template">
+				<h1>Schedule content</h1>
+				<p class="lead">Schedule date: 
+					<fmt:formatDate value="${schedule.timeStamp}" pattern="dd-MM-yyyy"/>
+				</p>
+				<table>
 					<tr>
-						<td>${scheduleItem.id}</td>
-						<td>${scheduleItem.group.name}</td>
-						<td>${scheduleItem.lecturer.name}</td>
-						<td>${scheduleItem.classroom.name}</td>
-						<td>${scheduleItem.subject.name}</td>
-						<td>${scheduleItem.lessonInterval.lessonStart} - ${scheduleItem.lessonInterval.lessonFinish}</td>
-						<td>
-							<form action="<c:url value='/scheduleitems/delete.html'/>" method="POST">
-								<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
-									<button type="submit" name="id" value="${scheduleItem.id}" class="btn btn-default btn-md" > 
-										<span>Delete</span>
-									</button>
-								</a>
-							</form>
-						</td>
+						<th width="10%" style="vertical-align: middle;">ID</th>
+						<th width="10%" style="vertical-align: middle;">Group</th>										
+						<th width="10%" style="vertical-align: middle;">Lecturer</th>
+						<th width="10%" style="vertical-align: middle;">Classroom</th>
+						<th width="10%" style="vertical-align: middle;">Subject</th>
+						<th width="10%" style="vertical-align: middle;">Lesson Interval</th>
+						<th width="20%" style="vertical-align: middle;">Available actions</th>
 					</tr>
-				</c:forEach>
-			</table>
-		</div>
-	</div><!-- /.container -->
+					<c:forEach items="${schedule.scheduleItems}" var="scheduleItem">
+						<tr>
+							<td>${scheduleItem.id}</td>
+							<td>${scheduleItem.group.name}</td>
+							<td>${scheduleItem.lecturer.name}</td>
+							<td>${scheduleItem.classroom.name}</td>
+							<td>${scheduleItem.subject.name}</td>
+							<td>${scheduleItem.lessonInterval.lessonStart} - ${scheduleItem.lessonInterval.lessonFinish}</td>
+							<td>
+								<form action="<c:url value='/scheduleitems/delete.html'/>" method="POST">
+									<a data-toggle="tooltip" class="my-tool-tip" data-placement="top" title="Delete">
+										<button type="submit" name="id" value="${scheduleItem.id}" class="btn btn-default btn-md" > 
+											<span>Delete</span>
+										</button>
+									</a>
+								</form>
+							</td>
+						</tr>
+					</c:forEach>
+				</table>
+			</div>
+		</div><!-- /.container -->
+		<div id="push"></div>
+	</div>
 	<jsp:include page="../fragments/footer.jsp"/>
 	<!-- Bootstrap core JavaScript
     ================================================== -->

@@ -1,7 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.model;
 import java.util.Set;
 import java.util.TreeSet;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -9,8 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.NotEmpty;
 /*
  * Task #4/2016/01/09 (web project #4)

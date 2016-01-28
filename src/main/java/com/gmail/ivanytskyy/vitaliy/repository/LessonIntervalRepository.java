@@ -1,5 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.repository;
 import java.util.List;
+
 import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
 /*
  * Task #4/2016/01/03 (web project #4)
@@ -12,4 +13,5 @@ public interface LessonIntervalRepository {
 	LessonInterval findById(long id);
 	List<LessonInterval> findAll();
 	void deleteById(long id);
+	boolean isExistsWithParameters(String lessonStart, String lessonFinish);
 }

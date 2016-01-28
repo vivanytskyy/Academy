@@ -6,22 +6,10 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">
-    <style>
-		.error {
-			color: #ff0000;
-		}		
-		.errorblock {
-			color: #000;
-			background-color: #ffEEEE;
-			border: 3px solid #ff0000;
-			padding: 8px;
-			margin: 16px;
-		}
-	</style>  
-	<title>Edit Schedule Item</title>
+    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" type="text/css" rel="stylesheet">
+    <title>Edit Schedule Item</title>
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>

@@ -1,5 +1,20 @@
 @CHARSET "UTF-8";
 /*
+ * Custom styles for this project
+ * ---------------------------------------------------
+ */
+.error {
+	color: #ff0000;
+}
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 16px;
+}
+
+/*
  * Style tweaks
  * --------------------------------------------------
  */
@@ -56,17 +71,5 @@ footer {
     position: absolute;
     top: 0;
     width: 50%; /* 6 columns */
-  }
-  
-  .error {
-  	color: #ff0000;
-  }
-  
-  .errorblock {
-  	color: #000;
-  	background-color: #ffEEEE;
-  	border: 3px solid #ff0000;
-  	padding: 8px;
-  	margin: 16px;
   }
 }

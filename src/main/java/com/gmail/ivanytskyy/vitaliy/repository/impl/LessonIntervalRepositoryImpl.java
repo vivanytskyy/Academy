@@ -1,8 +1,11 @@
 package com.gmail.ivanytskyy.vitaliy.repository.impl;
 import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 import org.springframework.stereotype.Repository;
+
 import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
 import com.gmail.ivanytskyy.vitaliy.repository.LessonIntervalRepository;
 @Repository("lessonIntervalRepository")
@@ -34,5 +37,15 @@ public class LessonIntervalRepositoryImpl implements LessonIntervalRepository {
 	public void deleteById(long id) {
 		LessonInterval lessonInterval = findById(id);
 		entityManager.remove(lessonInterval);		
+	}
+	@Override
+	public boolean isExistsWithParameters(String lessonStart,
+			String lessonFinish) {
+		long result = (long) entityManager.createQuery(
+				"SELECT COUNT(li) FROM LessonInterval li WHERE li.lessonStart=:lessonStart AND li.lessonFinish=:lessonFinish")
+				.setParameter("lessonStart", lessonStart)
+				.setParameter("lessonFinish", lessonFinish)
+				.getSingleResult();
+		return result > 0;
 	}
 }

@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">  
+    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" type="text/css" rel="stylesheet"> 
 	<title>Classrooms</title>
 </head>
 <body>
@@ -50,7 +49,6 @@
       </div>                     
     </div><!-- /.container -->
     <jsp:include page="../fragments/footer.jsp"/>
-
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="${pageContext.request.contextPath}/assets/js/jquery-1.11.3.js"></script>    

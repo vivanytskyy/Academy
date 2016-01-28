@@ -8,18 +8,6 @@
 	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">
-    <style>
-		.error {
-			color: #ff0000;
-		}		
-		.errorblock {
-			color: #000;
-			background-color: #ffEEEE;
-			border: 3px solid #ff0000;
-			padding: 8px;
-			margin: 16px;
-		}
-	</style>  
 	<title>Classroom</title>
 </head>
 <body>
@@ -31,15 +19,16 @@
 				<form:errors path="*" cssClass="errorblock" element="div" />
 				<table>
 					<tr>
-						<td width="50%" style="vertical-align: middle;">Name: </td>
-						<td width="50%" style="vertical-align: middle;">
+						<td width="20%" style="vertical-align: middle;">Name: </td>
+						<td width="30%" style="vertical-align: middle;">
 							<form:input path="name" cssErrorClass="error"/>
-							<%-- <form:errors path="name" cssClass="error" /> --%>
+						</td>
+						<td width="50%" style="vertical-align: middle;">
 							<form:errors path="*" cssClass="error" />
 						</td>
 					</tr>
 					<tr>
-						<td colspan="2">
+						<td colspan="3">
 							<input type="submit" value="Edit" class="btn"/>
 						</td>
 					</tr>

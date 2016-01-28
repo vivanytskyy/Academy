@@ -8,66 +8,43 @@
 	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">
-    <style type="text/css">
-		.error {
-			color: #ff0000;
-		}		
-		.errorblock {
-			color: #000;
-			background-color: #ffEEEE;
-			border: 3px solid #ff0000;
-			padding: 8px;
-			margin: 16px;
-		}
-	</style>  
 	<title>Academy</title>
 </head>
 <body>
 	<jsp:include page="../fragments/bodyHeader.jsp"/>
-
     <div class="container">
       <div class="starter-template">
         <h1>Schedule by Classroom</h1>        
         <p class="lead">
         	<spring:message code="obtain.schedule.by.classroom.greeting"/>
-        </p>
-        <%-- <form>
-		  <div class="form-group">
-		    <label>Name</label> 
-		    <input type="text" class="form-control" placeholder="Text input">
-		  </div>
-		  <div class="form-group">
-		  	<label>Date</label>
-		    <input type="text" class="form-control" placeholder="DD/MM/YYYY">
-		  </div>		  
-		  <button type="submit" class="btn btn-default">Submit</button>
-		</form> --%>
+        </p>        
 		<form:form commandName="scheduleItem">
-			<form:errors path="*" cssClass="errorblock"/>
+			<form:errors path="*" cssClass="errorblock" element="div"/>
 			<table>
 				<tr>
-					<td width="25%" style="vertical-align: middle;">Classroom name: </td>
-					<td width="75%" style="vertical-align: middle;">
-        				<%-- <form:input path="group.name" cssErrorClass="error"/>
-        				<form:errors path="name" cssClass="error" />
-        				<form:errors path="*" cssClass="error" /> --%>
-        				<form:select path="classroom">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+					<td width="30%" style="vertical-align: middle;">Classroom name: </td>
+					<td width="30%" style="vertical-align: middle;">
+        				<form:select path="classroom" cssErrorClass="error">
         					<form:options items="${classroomsList}" itemValue="id" itemLabel="name"/>
         				</form:select>
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="classroom" cssClass="error"/>
         			</td> 
 				</tr>
 				<tr>
-        			<td width="25%" style="vertical-align: middle;">Date: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="schedule">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Date: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="schedule" cssErrorClass="error">
         					<form:options items="${schedulesList}" itemValue="id" itemLabel="timeStamp"/>
         				</form:select>
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="schedule" cssClass="error"/>
         			</td>        			
         		</tr>
         		<tr>
-        			<td colspan="2">
+        			<td colspan="3">
         				<input type="submit" class="btn" value="Find"/>
         			</td>
         		</tr>

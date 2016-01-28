@@ -5,21 +5,9 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${pageContext.request.contextPath}/assets/css/bootstrap.min.css" type="text/css" rel="stylesheet">
 	<!-- Custom styles for this template -->
-    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" rel="stylesheet">
-    <style>
-		.error {
-			color: #ff0000;
-		}		
-		.errorblock {
-			color: #000;
-			background-color: #ffEEEE;
-			border: 3px solid #ff0000;
-			padding: 8px;
-			margin: 16px;
-		}
-	</style>  
+    <link href="${pageContext.request.contextPath}/assets/css/offcanvas.css" type="text/css" rel="stylesheet">
 	<title>Create Schedule Item</title>
 </head>
 <body>
@@ -31,67 +19,77 @@
         	<form:errors path="*" cssClass="errorblock" element="div" />
         	<table>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Date: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="schedule">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Date: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="schedule" cssErrorClass="error">
         					<form:options items="${schedulesList}" itemValue="id" itemLabel="timeStamp"/>
         				</form:select>
-        			</td>        			
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="schedule" cssClass="error" />
+        			</td>       			
         		</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Group: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<%-- <form:input path="group.name" cssErrorClass="error"/>
-        				<form:errors path="name" cssClass="error" />
-        				<form:errors path="*" cssClass="error" /> --%>
-        				<form:select path="group">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Group: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="group" cssErrorClass="error">
         					<form:options items="${groupsList}" itemValue="id" itemLabel="name"/>
         				</form:select>
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="group" cssClass="error" />
         			</td>        			
         		</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Lecturer: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="lecturer">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Lecturer: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="lecturer" cssErrorClass="error">
         					<form:options items="${lecturersList}" itemValue="id" itemLabel="name"/>
         				</form:select>
-        			</td>        			
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="lecturer" cssClass="error" />
+        			</td>       			
         		</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Classroom: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="classroom">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Classroom: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="classroom" cssErrorClass="error">
         					<form:options items="${classroomsList}" itemValue="id" itemLabel="name"/>
         				</form:select>
-        			</td>        			
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="classroom" cssClass="error" />
+        			</td>       			
         		</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Subject: </td>
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="subject">
-        					<%-- <form:option value="-" label="--Please Select"/> --%>
+        			<td width="30%" style="vertical-align: middle;">Subject: </td>
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="subject" cssErrorClass="error">
         					<form:options items="${subjectsList}" itemValue="id" itemLabel="name"/>
         				</form:select>
-        			</td>        			
-        		</tr>
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="subject" cssClass="error" />
+        			</td>
+				</tr>
         		<tr>
-        			<td width="25%" style="vertical-align: middle;">Lesson Interval: </td>        			
-        			<td width="75%" style="vertical-align: middle;">
-        				<form:select path="lessonInterval">
+        			<td width="30%" style="vertical-align: middle;">Lesson Interval: </td>        			
+        			<td width="30%" style="vertical-align: middle;">
+        				<form:select path="lessonInterval" cssErrorClass="error">
         					<c:forEach items="${lessonIntervalsList}" var="lessonInterval">
         						<form:option value="${lessonInterval.id}">
         							<c:out value="${lessonInterval.lessonStart} - ${lessonInterval.lessonFinish}"/>
         						</form:option>
         					</c:forEach>
         				</form:select>
-        			</td>       			
+        			</td>
+        			<td width="40%" style="vertical-align: middle;">
+        				<form:errors path="lessonInterval" cssClass="error" />
+        			</td>
         		</tr>	        		
         		<tr>
-        			<td colspan="2">
+        			<td colspan="3">
         				<input type="submit" class="btn" value="Create"/>
         			</td>
         		</tr>

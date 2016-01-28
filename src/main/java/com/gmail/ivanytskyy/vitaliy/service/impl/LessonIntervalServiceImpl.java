@@ -1,9 +1,11 @@
 package com.gmail.ivanytskyy.vitaliy.service.impl;
 import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import com.gmail.ivanytskyy.vitaliy.repository.LessonIntervalRepository;
 import com.gmail.ivanytskyy.vitaliy.service.LessonIntervalService;
 import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
@@ -46,5 +48,10 @@ public class LessonIntervalServiceImpl implements LessonIntervalService {
 		log.info("Remove lessonInterval by lessonIntervalId = " + id);
 		lessonIntervalRepository.deleteById(id);
 		log.trace("LessonInterval with lessonIntervalId = " + id + " was removed");
+	}
+	@Override
+	public boolean isExistsWithParameters(String lessonStart,
+			String lessonFinish) {
+		return lessonIntervalRepository.isExistsWithParameters(lessonStart, lessonFinish);
 	}	
 }

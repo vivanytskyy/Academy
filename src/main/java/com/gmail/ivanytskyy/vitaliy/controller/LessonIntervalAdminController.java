@@ -49,6 +49,11 @@ public class LessonIntervalAdminController {
 			Model model){
 		if(result.hasErrors()){
 			return "lessonIntervals/createLessonInterval";
+		}else if(lessonIntervalService
+				.isExistsWithParameters(
+						lessonInterval.getLessonStart(), lessonInterval.getLessonFinish())){
+			result.reject("notUniqueLessonInterval");
+			return "lessonIntervals/createLessonInterval";
 		}else{
 			lessonIntervalService.create(lessonInterval);
 			return "redirect:create.html";
@@ -71,6 +76,11 @@ public class LessonIntervalAdminController {
 			@PathVariable("id") Long id,
 			Model model){
 		if(result.hasErrors()){
+			return "lessonIntervals/updateLessonInterval";
+		}else if(lessonIntervalService
+				.isExistsWithParameters(
+						lessonInterval.getLessonStart(), lessonInterval.getLessonFinish())){
+			result.reject("notUniqueLessonInterval");
 			return "lessonIntervals/updateLessonInterval";
 		}else{
 			lessonIntervalService.create(lessonInterval);

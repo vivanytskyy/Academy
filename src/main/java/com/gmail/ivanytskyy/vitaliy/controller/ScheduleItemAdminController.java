@@ -36,6 +36,10 @@ import com.gmail.ivanytskyy.vitaliy.service.LessonIntervalService;
 import com.gmail.ivanytskyy.vitaliy.service.ScheduleItemService;
 import com.gmail.ivanytskyy.vitaliy.service.ScheduleService;
 import com.gmail.ivanytskyy.vitaliy.service.SubjectService;
+/*
+ * ScheduleItemAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/scheduleitems")
 public class ScheduleItemAdminController {

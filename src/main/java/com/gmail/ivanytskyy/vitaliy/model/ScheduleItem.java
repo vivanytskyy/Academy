@@ -1,5 +1,4 @@
 package com.gmail.ivanytskyy.vitaliy.model;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,9 +8,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 /*
- * Task #4/2016/01/09 (web project #4)
- * ScheduleItem class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing a scheduleItem
  * @author Vitaliy Ivanytskyy
  */
 @Entity

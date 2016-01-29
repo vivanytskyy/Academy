@@ -2,9 +2,7 @@ package com.gmail.ivanytskyy.vitaliy.service;
 import java.util.List;
 import com.gmail.ivanytskyy.vitaliy.model.ScheduleItem;
 /*
- * Task #4/2016/01/03 (web project #4)
- * ScheduleItemService interface
- * @version 1.01 2016.01.03
+ * Service interface for controllers which need a point of entry to ScheduleItemRepository
  * @author Vitaliy Ivanytskyy
  */
 public interface ScheduleItemService {

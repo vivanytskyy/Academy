@@ -10,6 +10,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 import com.gmail.ivanytskyy.vitaliy.model.ScheduleItem;
 import com.gmail.ivanytskyy.vitaliy.repository.ScheduleItemRepository;
 import com.gmail.ivanytskyy.vitaliy.service.AcademyService;
+/*
+ * Implementation of the {@link AcademyService} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Service("academyService")
 @Transactional
 public class AcademyServiceImpl implements AcademyService {

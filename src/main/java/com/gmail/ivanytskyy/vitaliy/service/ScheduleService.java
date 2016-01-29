@@ -3,9 +3,7 @@ import java.util.Date;
 import java.util.List;
 import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 /*
- * Task #4/2016/01/03 (web project #4)
- * ScheduleService interface
- * @version 1.01 2016.01.03
+ * Service interface for controllers which need a point of entry to ScheduleRepository
  * @author Vitaliy Ivanytskyy
  */
 public interface ScheduleService {

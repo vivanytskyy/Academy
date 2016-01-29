@@ -5,6 +5,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import com.gmail.ivanytskyy.vitaliy.model.Group;
 import com.gmail.ivanytskyy.vitaliy.repository.GroupRepository;
+/*
+ * JPA implementation of the {@link GroupRepository} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Repository("groupRepository")
 public class GroupRepositoryImpl implements GroupRepository {
 	@PersistenceContext

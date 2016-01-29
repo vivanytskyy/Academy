@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.gmail.ivanytskyy.vitaliy.model.Subject;
 import com.gmail.ivanytskyy.vitaliy.service.SubjectService;
+/*
+ * SubjectAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/subjects")
 public class SubjectAdminController {

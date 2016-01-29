@@ -5,6 +5,10 @@ import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 import com.gmail.ivanytskyy.vitaliy.model.Subject;
 import com.gmail.ivanytskyy.vitaliy.repository.SubjectRepository;
+/*
+ * JPA implementation of the {@link SubjectRepository} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Repository("subjectRepository")
 public class SubjectRepositoryImpl implements SubjectRepository {
 	@PersistenceContext

@@ -2,9 +2,7 @@ package com.gmail.ivanytskyy.vitaliy.repository;
 import java.util.List;
 import com.gmail.ivanytskyy.vitaliy.model.Student;
 /*
- * Task #4/2016/01/03 (web project #4)
- * StudentRepository interface
- * @version 1.01 2016.01.03
+ * Repository interface for Student domain objects
  * @author Vitaliy Ivanytskyy
  */
 public interface StudentRepository {

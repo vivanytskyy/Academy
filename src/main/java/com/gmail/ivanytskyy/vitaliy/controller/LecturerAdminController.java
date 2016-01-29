@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import com.gmail.ivanytskyy.vitaliy.model.Lecturer;
 import com.gmail.ivanytskyy.vitaliy.service.LecturerService;
+/*
+ * LecturerAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/lecturers")
 public class LecturerAdminController {

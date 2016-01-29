@@ -26,7 +26,6 @@
 	        	<li>JPA and Hibernate;</li>
 	        	<li>Apache Maven;</li>
 	        	<li>JSP (JSTL);</li>
-	        	<!-- <li>Log4j;</li> -->
 	        	<li>JNDI (Data source obtaining)</li>
 	        	<li>Bootstrap</li>
 	        </ul>

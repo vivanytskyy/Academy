@@ -3,9 +3,7 @@ import java.util.List;
 
 import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
 /*
- * Task #4/2016/01/03 (web project #4)
- * LessonIntervalRepository interface
- * @version 1.01 2016.01.03
+ * Repository interface for LessonInterval domain objects
  * @author Vitaliy Ivanytskyy
  */
 public interface LessonIntervalRepository {

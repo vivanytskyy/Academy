@@ -1,6 +1,10 @@
 package com.gmail.ivanytskyy.vitaliy.annotation;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
+/*
+ * LessonIntervalFormatValidator class. Used as a validator for properties of LessonInterval objects
+ * @author Vitaliy Ivanytskyy
+ */
 public class LessonIntervalFormatValidator implements ConstraintValidator<LessonIntervalFormat, String>{
 	@Override
 	public void initialize(LessonIntervalFormat constraintAnnotation) {}

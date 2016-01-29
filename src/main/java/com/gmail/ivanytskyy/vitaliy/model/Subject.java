@@ -6,9 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 /*
- * Task #4/2016/01/09 (web project #4)
- * Subject class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing a subject
  * @author Vitaliy Ivanytskyy
  */
 @Entity

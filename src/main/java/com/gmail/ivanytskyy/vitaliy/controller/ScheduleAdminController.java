@@ -17,6 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 import com.gmail.ivanytskyy.vitaliy.service.ScheduleService;
+/*
+ * ScheduleAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/schedules")
 public class ScheduleAdminController {

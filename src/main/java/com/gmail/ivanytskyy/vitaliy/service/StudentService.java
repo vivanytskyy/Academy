@@ -2,9 +2,7 @@ package com.gmail.ivanytskyy.vitaliy.service;
 import java.util.List;
 import com.gmail.ivanytskyy.vitaliy.model.Student;
 /*
- * Task #4/2016/01/03 (web project #4)
- * StudentService interface
- * @version 1.01 2016.01.03
+ * Service interface for controllers which need a point of entry to StudentRepository
  * @author Vitaliy Ivanytskyy
  */
 public interface StudentService {

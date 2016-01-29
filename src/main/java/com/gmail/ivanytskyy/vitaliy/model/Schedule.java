@@ -12,9 +12,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 /*
- * Task #4/2016/01/09 (web project #4)
- * Schedule class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing a schedule
  * @author Vitaliy Ivanytskyy
  */
 @Entity

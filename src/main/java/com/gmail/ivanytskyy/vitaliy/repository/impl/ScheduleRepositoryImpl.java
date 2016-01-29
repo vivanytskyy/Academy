@@ -1,14 +1,15 @@
 package com.gmail.ivanytskyy.vitaliy.repository.impl;
 import java.util.Date;
 import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 import org.springframework.stereotype.Repository;
-
 import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 import com.gmail.ivanytskyy.vitaliy.repository.ScheduleRepository;
+/*
+ * JPA implementation of the {@link ScheduleRepository} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Repository("scheduleRepository")
 public class ScheduleRepositoryImpl implements ScheduleRepository {
 	@PersistenceContext

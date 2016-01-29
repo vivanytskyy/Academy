@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.gmail.ivanytskyy.vitaliy.model.Group;
 import com.gmail.ivanytskyy.vitaliy.service.GroupService;
+/*
+ * GroupAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/groups")
 public class GroupAdminController {

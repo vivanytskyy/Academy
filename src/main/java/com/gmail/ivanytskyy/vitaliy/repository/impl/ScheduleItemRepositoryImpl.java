@@ -9,6 +9,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Lecturer;
 import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 import com.gmail.ivanytskyy.vitaliy.model.ScheduleItem;
 import com.gmail.ivanytskyy.vitaliy.repository.ScheduleItemRepository;
+/*
+ * JPA implementation of the {@link ScheduleItemRepository} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Repository("scheduleItemRepository")
 public class ScheduleItemRepositoryImpl implements ScheduleItemRepository {
 	@PersistenceContext

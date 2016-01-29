@@ -6,6 +6,10 @@ import javax.persistence.Query;
 import org.springframework.stereotype.Repository;
 import com.gmail.ivanytskyy.vitaliy.model.Classroom;
 import com.gmail.ivanytskyy.vitaliy.repository.ClassroomRepository;
+/*
+ * JPA implementation of the {@link ClassroomRepository} interface.
+ * @author Vitaliy Ivanytskyy
+ */
 @Repository("classroomRepository")
 public class ClassroomRepositoryImpl implements ClassroomRepository {
 	@PersistenceContext

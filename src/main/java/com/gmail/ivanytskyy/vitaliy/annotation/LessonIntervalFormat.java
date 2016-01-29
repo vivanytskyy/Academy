@@ -6,6 +6,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
+/*
+ * LessonIntervalFormat annotation class. Used as an annotation for fields of LessonInterval class  
+ * @author Vitaliy Ivanytskyy
+ */
 @Target({ FIELD })
 @Retention(RUNTIME)
 @Documented

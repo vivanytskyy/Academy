@@ -26,6 +26,10 @@ import com.gmail.ivanytskyy.vitaliy.service.ClassroomService;
 import com.gmail.ivanytskyy.vitaliy.service.GroupService;
 import com.gmail.ivanytskyy.vitaliy.service.LecturerService;
 import com.gmail.ivanytskyy.vitaliy.service.ScheduleService;
+/*
+ * ScheduleGiverController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/getSchedule")
 public class ScheduleGiverController {

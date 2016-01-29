@@ -1,8 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
 import java.util.List;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -15,9 +13,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
 import com.gmail.ivanytskyy.vitaliy.service.LessonIntervalService;
+/*
+ * LessonIntervalAdminController class
+ * @author Vitaliy Ivanytskyy
+ */
 @Controller
 @RequestMapping("/lessonintervals")
 public class LessonIntervalAdminController {

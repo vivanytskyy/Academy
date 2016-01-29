@@ -1,9 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.model;
 import org.springframework.stereotype.Component;
 /*
- * Task #4/2016/01/09 (web project #4)
- * Academy class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing an academy
  * @author Vitaliy Ivanytskyy
  */
 @Component("academy")
@@ -20,6 +18,5 @@ public class Academy {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	
+	}	
 }

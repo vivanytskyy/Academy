@@ -9,9 +9,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.NotEmpty;
 /*
- * Task #4/2016/01/09 (pet web project #4)
- * Student class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing a student
  * @author Vitaliy Ivanytskyy
  */
 @Entity

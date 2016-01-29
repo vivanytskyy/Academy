@@ -3,9 +3,7 @@ import java.util.Date;
 import java.util.List;
 import com.gmail.ivanytskyy.vitaliy.model.Schedule;
 /*
- * Task #4/2016/01/03 (web project #4)
- * ScheduleRepository interface
- * @version 1.01 2016.01.03
+ * Repository interface for Schedule domain objects
  * @author Vitaliy Ivanytskyy
  */
 public interface ScheduleRepository {

@@ -5,14 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
 import org.hibernate.validator.constraints.NotEmpty;
-
 import com.gmail.ivanytskyy.vitaliy.annotation.LessonIntervalFormat;
 /*
- * Task #4/2016/01/09 (web project #4)
- * LessonInterval class
- * @version 1.01 2016.01.09
+ * Simple JavaBean domain object representing a lessonInterval
  * @author Vitaliy Ivanytskyy
  */
 @Entity

@@ -37,9 +37,9 @@
 				</form:form>
 			</div>
 		</div><!-- /.container -->
-		<jsp:include page="../fragments/footer.jsp"/>
 		<div id="push"></div>
 	</div>
+	<jsp:include page="../fragments/footer.jsp"/>
 	<!-- Bootstrap core JavaScript
     ================================================== -->
     <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/jquery-1.11.3.js"></script>

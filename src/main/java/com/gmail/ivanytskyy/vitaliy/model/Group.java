@@ -21,7 +21,7 @@ public class Group {
 	private Long id;
 	@NotEmpty
 	private String name;
-	@OneToMany(mappedBy = "group", orphanRemoval=true, /*cascade = CascadeType.ALL,*/ fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "group", orphanRemoval=true, fetch = FetchType.LAZY)
 	private Set<Student> students = new TreeSet<Student>();
 	public Long getId() {
 		return id;

@@ -8,5 +8,6 @@ List of technologies were applied:
 - JPA and Hibernate;
 - Apache Maven;
 - JSP (JSTL);
-- JNDI (Data source obtaining)
+- JNDI (Data source obtaining);
+- SLF4J/Logback;
 - Bootstrap

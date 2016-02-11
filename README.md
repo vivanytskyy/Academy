@@ -9,5 +9,7 @@ List of technologies were applied:
 - Apache Maven;
 - JSP (JSTL);
 - JNDI (Data source obtaining);
+- JUnit;
+- Mockito;
 - SLF4J/Logback;
 - Bootstrap

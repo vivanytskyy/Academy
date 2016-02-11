@@ -27,6 +27,8 @@
 	        	<li>Apache Maven;</li>
 	        	<li>JSP (JSTL);</li>
 	        	<li>JNDI (Data source obtaining);</li>
+	        	<li>JUnit;</li>
+	        	<li>Mockito;</li>
 	        	<li>SLF4J/Logback;</li>
 	        	<li>Bootstrap</li>
 	        </ul>

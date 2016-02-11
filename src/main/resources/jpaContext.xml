@@ -44,14 +44,18 @@
     
     <tx:annotation-driven transaction-manager="transactionManager"/> 
     
-    <!-- for testing -->
-    <!-- <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-    	<property name="driverClassName" value="org.postgresql.Driver"/>
-		<property name="url" value="jdbc:postgresql://localhost/academy?autoReconnect=true"/>
-		<property name="username" value="postgres"/>
-		<property name="password" value="password"/>
-	</bean>	-->
+    <!-- for developing -->
+    <beans profile="dev">
+    	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    		<property name="driverClassName" value="org.postgresql.Driver"/>
+    		<property name="url" value="jdbc:postgresql://localhost/academy?autoReconnect=true"/>
+    		<property name="username" value="postgres"/>
+    		<property name="password" value="password"/>
+    	</bean>
+    </beans>
 	<!-- for production -->
-	<jee:jndi-lookup id="dataSource" jndi-name="jdbc/postgres" resource-ref="true" proxy-interface="javax.sql.DataSource"/>
+	<beans profile="production">
+		<jee:jndi-lookup id="dataSource" jndi-name="jdbc/postgres" resource-ref="true" proxy-interface="javax.sql.DataSource"/>
+	</beans>
         
 </beans>

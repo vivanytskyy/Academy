@@ -6,10 +6,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Subject;
  * @author Vitaliy Ivanytskyy
  */
 public interface SubjectService {
-	public Subject create(Subject subject);
-	public Subject findById(long id);
-	public List<Subject> findByName(String name);
-	public List<Subject> findAll();
-	public boolean isExistsWithName(String name);
-	public void deleteById(long id);
+	Subject create(Subject subject);
+	Subject findById(long id);
+	List<Subject> findByName(String name);
+	List<Subject> findAll();
+	boolean isExistsWithName(String name);
+	void deleteById(long id);
 }

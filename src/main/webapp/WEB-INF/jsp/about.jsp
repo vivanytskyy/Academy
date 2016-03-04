@@ -15,7 +15,7 @@
 	      <div class="starter-template">
 	        <h1>About project</h1>
 	        <p class="lead">
-	        	Academy (as extension Institute project) is a simple java web application. My purpose was creating a simplified academy management system.
+	        	Academy (as extension Institute project) is a simple java web application. My task was to create a simplified academy management system.
 	        	<br>
 	        	List of technologies were applied:
 	        </p>

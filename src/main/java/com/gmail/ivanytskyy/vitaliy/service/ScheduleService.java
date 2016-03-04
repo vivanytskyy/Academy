@@ -7,10 +7,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Schedule;
  * @author Vitaliy Ivanytskyy
  */
 public interface ScheduleService {
-	public Schedule create(Schedule schedule);
-	public Schedule findById(long id);
-	public List<Schedule> findByDate(Date scheduleDate);
-	public List<Schedule> findAll();
-	public boolean isExistsWithDate(Date timeStamp);
-	public abstract void deleteById(long id);
+	Schedule create(Schedule schedule);
+	Schedule findById(long id);
+	List<Schedule> findByDate(Date scheduleDate);
+	List<Schedule> findAll();
+	boolean isExistsWithDate(Date timeStamp);
+	abstract void deleteById(long id);
 }

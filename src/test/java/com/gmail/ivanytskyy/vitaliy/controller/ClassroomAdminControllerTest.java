@@ -1,6 +1,8 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -9,8 +11,10 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import com.gmail.ivanytskyy.vitaliy.model.Classroom;
 import com.gmail.ivanytskyy.vitaliy.service.ClassroomService;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.hamcrest.Matchers.*;
@@ -32,8 +36,13 @@ public class ClassroomAdminControllerTest {
 	@Test
 	public void testShowAllClassrooms() throws Exception{
 		List<Classroom> classrooms = new ArrayList<Classroom>();
-		classrooms.add(new Classroom());
-		classrooms.add(new Classroom());
+		Classroom firstClassroom = new Classroom();
+		firstClassroom.setName("first");
+		Classroom secondClassroom = new Classroom();
+		secondClassroom.setName("second");
+		classrooms.add(firstClassroom);
+		classrooms.add(secondClassroom);
+		Collections.sort(classrooms);
 		Mockito.when(classroomService.findAll()).thenReturn((List<Classroom>) classrooms);
 		mockMvc.perform(get("/classrooms/list"))
 			.andExpect(status().isOk())

@@ -1,5 +1,7 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -65,7 +67,9 @@ public class ScheduleGiverController {
 	public String getScheduleByClassroom(Model model){
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Classroom> classroomsList = classroomService.findAll();
+		Collections.sort(classroomsList);
 		List<Schedule> schedulesList = scheduleService.findAll();
+		Collections.sort(schedulesList);
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("classroomsList", classroomsList);
 		model.addAttribute("schedulesList", schedulesList);
@@ -79,6 +83,7 @@ public class ScheduleGiverController {
 		Classroom classroom = scheduleItem.getClassroom();
 		Schedule schedule = scheduleItem.getSchedule();
 		List<ScheduleItem> resultScheduleItems = academyService.findScheduleByClassroom(schedule, classroom);
+		Collections.sort(resultScheduleItems, new LocalComparatorWithLessonInterval());
 		if(result.hasErrors()){
 			return "redirect:getScheduleByClassroom.html";
 		}else{
@@ -92,7 +97,9 @@ public class ScheduleGiverController {
 	public String getScheduleByLecturer(Model model){
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Lecturer> lecturersList = lecturerService.findAll();
+		Collections.sort(lecturersList);
 		List<Schedule> schedulesList = scheduleService.findAll();
+		Collections.sort(schedulesList);
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("lecturersList", lecturersList);
 		model.addAttribute("schedulesList", schedulesList);
@@ -106,6 +113,7 @@ public class ScheduleGiverController {
 		Lecturer lecturer = scheduleItem.getLecturer();
 		Schedule schedule = scheduleItem.getSchedule();
 		List<ScheduleItem> resultScheduleItems = academyService.findScheduleByLecturer(schedule, lecturer);
+		Collections.sort(resultScheduleItems, new LocalComparatorWithLessonInterval());
 		if(result.hasErrors()){
 			return "redirect:getScheduleByLecturer.html";
 		}else{
@@ -119,7 +127,9 @@ public class ScheduleGiverController {
 	public String getScheduleByGroup(Model model){
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Group> groupsList = groupService.findAll();
+		Collections.sort(groupsList);
 		List<Schedule> schedulesList = scheduleService.findAll();
+		Collections.sort(schedulesList);
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("groupsList", groupsList);
 		model.addAttribute("schedulesList", schedulesList);
@@ -133,6 +143,7 @@ public class ScheduleGiverController {
 		Group group = scheduleItem.getGroup();
 		Schedule schedule = scheduleItem.getSchedule();
 		List<ScheduleItem> resultScheduleItems = academyService.findScheduleByGroup(schedule, group);
+		Collections.sort(resultScheduleItems, new LocalComparatorWithLessonInterval());
 		if(result.hasErrors()){
 			return "redirect:getScheduleByGroup.html";
 		}else{
@@ -141,5 +152,12 @@ public class ScheduleGiverController {
 			model.addAttribute("resultScheduleItems", resultScheduleItems);
 			return "getSchedule/scheduleResult";
 		}
+	}
+	private class LocalComparatorWithLessonInterval implements Comparator<ScheduleItem>{
+		@Override
+		public int compare(ScheduleItem o1, ScheduleItem o2) {
+			return o1.getLessonInterval().getLessonStart()
+					.compareTo(o2.getLessonInterval().getLessonStart());
+		}		
 	}
 }

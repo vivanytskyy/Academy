@@ -17,7 +17,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  */
 @Entity
 @Table(name = "schedules")
-public class Schedule {
+public class Schedule implements Comparable<Schedule>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -44,4 +44,8 @@ public class Schedule {
 	public void setScheduleItems(Set<ScheduleItem> scheduleItems) {
 		this.scheduleItems = scheduleItems;
 	}
+	@Override
+	public int compareTo(Schedule o) {
+		return timeStamp.compareTo(o.getTimeStamp());
+	}	
 }

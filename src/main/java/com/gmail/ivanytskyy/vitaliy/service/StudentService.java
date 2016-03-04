@@ -6,10 +6,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Student;
  * @author Vitaliy Ivanytskyy
  */
 public interface StudentService {
-	public Student create(Student student);
-	public Student findById(long id);
-	public List<Student> findByName(String name);
-	public List<Student> findByGroupId(long groupId);
-	public List<Student> findAll();
-	public void deleteById(long id);	
+	Student create(Student student);
+	Student findById(long id);
+	List<Student> findByName(String name);
+	List<Student> findByGroupId(long groupId);
+	List<Student> findAll();
+	void deleteById(long id);	
 }

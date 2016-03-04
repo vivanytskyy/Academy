@@ -6,10 +6,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Group;
  * @author Vitaliy Ivanytskyy
  */
 public interface GroupService {
-	public Group create(Group group);
-	public Group findById(long id);
-	public List<Group> findByName(String name);
-	public List<Group> findAll();
-	public boolean isExistsWithName(String name);
-	public void deleteById(long id);
+	Group create(Group group);
+	Group findById(long id);
+	List<Group> findByName(String name);
+	List<Group> findAll();
+	boolean isExistsWithName(String name);
+	void deleteById(long id);
 }

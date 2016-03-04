@@ -1,5 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import javax.validation.Valid;
@@ -95,11 +96,17 @@ public class ScheduleItemAdminController {
 	public String createScheduleItem(Model model){
 		ScheduleItem scheduleItem = new ScheduleItem();
 		List<Schedule> schedulesList = scheduleService.findAll();
+		Collections.sort(schedulesList);
 		List<Group> groupsList = groupService.findAll();
+		Collections.sort(groupsList);
 		List<Lecturer> lecturersList = lecturerService.findAll();
+		Collections.sort(lecturersList);
 		List<Classroom> classroomsList = classroomService.findAll();
+		Collections.sort(classroomsList);
 		List<Subject> subjectsList = subjectService.findAll();
+		Collections.sort(subjectsList);
 		List<LessonInterval> lessonIntervalsList = lessonIntervalService.findAll();
+		Collections.sort(lessonIntervalsList);
 		model.addAttribute("scheduleItem", scheduleItem);
 		model.addAttribute("schedulesList", schedulesList);
 		model.addAttribute("groupsList", groupsList);
@@ -128,11 +135,17 @@ public class ScheduleItemAdminController {
 			return "redirect:/scheduleitems/list.html";
 		}else{
 			List<Schedule> schedulesList = scheduleService.findAll();
+			Collections.sort(schedulesList);
 			List<Group> groupsList = groupService.findAll();
+			Collections.sort(groupsList);
 			List<Lecturer> lecturersList = lecturerService.findAll();
+			Collections.sort(lecturersList);
 			List<Classroom> classroomsList = classroomService.findAll();
+			Collections.sort(classroomsList);
 			List<Subject> subjectsList = subjectService.findAll();
+			Collections.sort(subjectsList);
 			List<LessonInterval> lessonIntervalsList = lessonIntervalService.findAll();
+			Collections.sort(lessonIntervalsList);
 			model.addAttribute("schedulesList", schedulesList);
 			model.addAttribute("groupsList", groupsList);
 			model.addAttribute("lecturersList", lecturersList);

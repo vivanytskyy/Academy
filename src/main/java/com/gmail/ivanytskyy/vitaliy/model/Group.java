@@ -1,6 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.model;
+import java.util.HashSet;
 import java.util.Set;
-import java.util.TreeSet;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -15,14 +15,14 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @Table(name = "groups")
-public class Group {
+public class Group implements Comparable<Group>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@NotEmpty
 	private String name;
 	@OneToMany(mappedBy = "group", orphanRemoval=true, fetch = FetchType.LAZY)
-	private Set<Student> students = new TreeSet<Student>();
+	private Set<Student> students = new HashSet<Student>();
 	public Long getId() {
 		return id;
 	}
@@ -40,5 +40,9 @@ public class Group {
 	}
 	public void setStudents(Set<Student> students) {
 		this.students = students;
+	}
+	@Override
+	public int compareTo(Group o) {
+		return name.compareTo(o.getName());
 	}
 }

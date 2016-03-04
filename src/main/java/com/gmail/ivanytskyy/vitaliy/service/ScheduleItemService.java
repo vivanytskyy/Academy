@@ -6,9 +6,9 @@ import com.gmail.ivanytskyy.vitaliy.model.ScheduleItem;
  * @author Vitaliy Ivanytskyy
  */
 public interface ScheduleItemService {
-	public ScheduleItem create(ScheduleItem scheduleItem);
-	public ScheduleItem findById(long id);
-	public List<ScheduleItem> findByScheduleId(long scheduleId);
-	public List<ScheduleItem> findAll();
-	public void deleteById(long id);
+	ScheduleItem create(ScheduleItem scheduleItem);
+	ScheduleItem findById(long id);
+	List<ScheduleItem> findByScheduleId(long scheduleId);
+	List<ScheduleItem> findAll();
+	void deleteById(long id);
 }

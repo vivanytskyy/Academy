@@ -6,10 +6,9 @@ import com.gmail.ivanytskyy.vitaliy.model.LessonInterval;
  * @author Vitaliy Ivanytskyy
  */
 public interface LessonIntervalService {
-	public LessonInterval create(LessonInterval lessonInterval);
-	public LessonInterval findById(long id);
-	public List<LessonInterval> findAll();
-	public void deleteById(long id);
-	public boolean isExistsWithParameters(String lessonStart,
-			String lessonFinish);
+	LessonInterval create(LessonInterval lessonInterval);
+	LessonInterval findById(long id);
+	List<LessonInterval> findAll();
+	void deleteById(long id);
+	boolean isExistsWithParameters(String lessonStart, String lessonFinish);
 }

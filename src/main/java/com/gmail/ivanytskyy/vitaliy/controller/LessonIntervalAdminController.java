@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,6 +33,7 @@ public class LessonIntervalAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllLessonIntervals(Model model){
 		List<LessonInterval> lessonIntervals = lessonIntervalService.findAll();
+		Collections.sort(lessonIntervals);
 		model.addAttribute("lessonIntervals", lessonIntervals);
 		return "lessonIntervals/lessonIntervalsList";
 	}

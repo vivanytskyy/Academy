@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class GroupAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllGroups(Model model){
 		List<Group> groups = groupService.findAll();
+		Collections.sort(groups);
 		model.addAttribute("groups", groups);
 		return "groups/groupsList";
 	}

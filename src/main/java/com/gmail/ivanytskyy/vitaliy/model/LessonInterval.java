@@ -13,7 +13,7 @@ import com.gmail.ivanytskyy.vitaliy.annotation.LessonIntervalFormat;
  */
 @Entity
 @Table(name = "lesson_intervals")
-public class LessonInterval {
+public class LessonInterval implements Comparable<LessonInterval>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -42,5 +42,9 @@ public class LessonInterval {
 	}
 	public void setLessonFinish(String lessonFinish) {
 		this.lessonFinish = lessonFinish;
+	}
+	@Override
+	public int compareTo(LessonInterval o) {
+		return lessonStart.compareTo(o.getLessonStart());
 	}
 }

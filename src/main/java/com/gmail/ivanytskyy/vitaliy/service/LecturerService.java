@@ -6,10 +6,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Lecturer;
  * @author Vitaliy Ivanytskyy
  */
 public interface LecturerService {
-	public Lecturer create(Lecturer lecturer);
-	public Lecturer findById(long id);
-	public List<Lecturer> findByName(String name);
-	public List<Lecturer> findAll();
-	public boolean isExistsWithName(String name);
-	public void deleteById(long id);	
+	Lecturer create(Lecturer lecturer);
+	Lecturer findById(long id);
+	List<Lecturer> findByName(String name);
+	List<Lecturer> findAll();
+	boolean isExistsWithName(String name);
+	void deleteById(long id);	
 }

@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class SubjectAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllSubjects(Model model){
 		List<Subject> subjects = subjectService.findAll();
+		Collections.sort(subjects);
 		model.addAttribute("subjects", subjects);
 		return "subjects/subjectsList";
 	}

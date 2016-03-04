@@ -6,10 +6,10 @@ import com.gmail.ivanytskyy.vitaliy.model.Classroom;
  * @author Vitaliy Ivanytskyy
  */
 public interface ClassroomService {
-	public Classroom create(Classroom classroom);
-	public Classroom findById(long id);
-	public List<Classroom> findByName(String name);
-	public List<Classroom> findAll();
-	public void deleteById(long id);	
-	public boolean isExistsWithName(String name);
+	Classroom create(Classroom classroom);
+	Classroom findById(long id);
+	List<Classroom> findByName(String name);
+	List<Classroom> findAll();
+	void deleteById(long id);	
+	boolean isExistsWithName(String name);
 }

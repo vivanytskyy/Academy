@@ -14,7 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @Table(name = "students")
-public class Student {
+public class Student implements Comparable<Student>{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -41,5 +41,9 @@ public class Student {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	@Override
+	public int compareTo(Student o) {
+		return name.compareTo(o.getName());
 	}	
 }

@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class LecturerAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllLecturers(Model model){
 		List<Lecturer> lecturers = lecturerService.findAll();
+		Collections.sort(lecturers);
 		model.addAttribute("lecturers", lecturers);
 		return "lecturers/lecturersList";
 	}

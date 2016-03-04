@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class ClassroomAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllClassrooms(Model model){
 		List<Classroom> classrooms = classroomService.findAll();
+		Collections.sort(classrooms);
 		model.addAttribute("classrooms", classrooms);
 		return "classrooms/classroomsList";
 	}

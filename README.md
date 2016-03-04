@@ -1,6 +1,6 @@
 # Academy
 Academy (as extension Institute project) is a simple java web application.
-My purpose was creating a simplified academy management system.
+My task was to create a simplified academy management system.
 List of technologies were applied:
 - Java SE;
 - Apache Tomcat;

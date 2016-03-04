@@ -1,5 +1,6 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import javax.validation.Valid;
@@ -39,6 +40,7 @@ public class ScheduleAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllSchedules(Model model){
 		List<Schedule> schedules = scheduleService.findAll();
+		Collections.sort(schedules);
 		model.addAttribute("schedules", schedules);
 		return "schedules/schedulesList";
 	}

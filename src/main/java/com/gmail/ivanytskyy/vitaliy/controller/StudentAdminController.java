@@ -1,4 +1,5 @@
 package com.gmail.ivanytskyy.vitaliy.controller;
+import java.util.Collections;
 import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,7 @@ public class StudentAdminController {
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String showAllStudents(Model model){
 		List<Student> students = studentService.findAll();
+		Collections.sort(students);
 		model.addAttribute("students", students);
 		return "students/studentsList";
 	}
@@ -48,6 +50,7 @@ public class StudentAdminController {
 		Student student = new Student();
 		student.setName("name");
 		List<Group> groupsList = groupService.findAll();
+		Collections.sort(groupsList);
 		model.addAttribute("groupsList", groupsList);
 		model.addAttribute("student", student);
 		return "students/createStudent";
@@ -74,6 +77,7 @@ public class StudentAdminController {
 			return "redirect:/students/list.html";
 		}else{
 			List<Group> groupsList = groupService.findAll();
+			Collections.sort(groupsList);
 			model.addAttribute("groupsList", groupsList);
 			model.addAttribute("student", student);
 			return "students/updateStudent";
